@@ -5,7 +5,10 @@ class SimpleAdnReader(AbstractReader):
 
     def __init__(self, file):
         self.file = file
+        self.f = open(file, "r")
 
     def read(self):
-        f = open(self.file, "r")
-        return f.read()
+        return self.f.read()
+
+    def read_line(self):
+        return self.f.readline()
